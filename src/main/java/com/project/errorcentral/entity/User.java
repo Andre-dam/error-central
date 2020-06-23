@@ -9,7 +9,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -24,21 +23,17 @@ import java.time.LocalDateTime;
 @Table(name = "users")
 public class User {
     @Id
-    private String email;
+    String email;
 
     @Column
     @NotNull
-    private String name;
+    String name;
 
     @Column
     @NotNull
-    private String password;
-
-    @Column
-    @GeneratedValue
-    private int Id;
+    String password;
 
     @Column
     @CreatedDate
-    private LocalDateTime createdAt;
+    LocalDateTime createdAt;
 }
