@@ -38,4 +38,9 @@ public class User {
     @Column
     @CreatedDate
     LocalDateTime createdAt;
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof User ? ((User) obj).getEmail().equals(this.getEmail()) : false;
+    }
 }

@@ -26,9 +26,7 @@ public class UserRepositoryTest extends TestCase {
         User user1 = UserFixture.basicUserBuilder().build();
         User persistedUser = userRepository.save(user1);
 
-        assertEquals(user1.getName(), persistedUser.getName());
-        assertEquals(user1.getEmail(), persistedUser.getEmail());
-        assertEquals(user1.getPassword(), persistedUser.getPassword());
+        assertEquals(user1, persistedUser);
         assertNotNull(persistedUser.getCreatedAt());
     }
 }
