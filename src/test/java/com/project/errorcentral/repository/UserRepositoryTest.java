@@ -17,13 +17,13 @@ public class UserRepositoryTest extends TestCase {
     UserRepository userRepository;
 
     @After
-    public void clean(){
+    public void clean() {
         userRepository.deleteAll();
     }
 
     @Test
-    public void saveMethod(){
-        User user1 = UserFixture.basicUserBuilder().build();
+    public void saveMethod() {
+        User user1 = UserFixture.buildBasicUser();
         User persistedUser = userRepository.save(user1);
 
         assertEquals(user1, persistedUser);

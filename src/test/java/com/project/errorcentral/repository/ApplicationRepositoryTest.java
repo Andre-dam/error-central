@@ -25,11 +25,8 @@ public class ApplicationRepositoryTest extends TestCase {
 
     @Test
     public void saveMethod() {
-        User userOwner = UserFixture.basicUserBuilder()
-                .build();
-        Application app1 = ApplicationFixture
-                .basicApplicationBuilder(userOwner)
-                .build();
+        User userOwner = UserFixture.buildBasicUser();
+        Application app1 = ApplicationFixture.buildApplicationWithUser(userOwner);
         Application persistedApp = applicationRepository.save(app1);
 
         assertEquals(app1, persistedApp);
